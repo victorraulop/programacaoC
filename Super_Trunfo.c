@@ -42,6 +42,7 @@ int main() {
 
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &pontosTuristicos1);
+    
 
     // Entrada de dados para a segunda carta
     printf("Insira os dados da Carta 2:");
@@ -65,17 +66,27 @@ int main() {
     scanf("%f", &pib2);
 
     printf("Número de Pontos Turísticos: ");
-    scanf("%d", &pontosTuristicos2);
+    scanf("%d\n", &pontosTuristicos2);
+
+    // Cálculo da Densidade Populacional e PIB per Capita para a primeira carta
+    float densidadePopulacional1 = (area1 != 0) ? (populacao1 / area1) : 0;
+    float pibPerCapita1 = (populacao1 != 0) ? ((pib1 * 1000) / populacao1) : 0;
+
+    // Cálculo da Densidade Populacional e PIB per Capita para a segunda carta
+    float densidadePopulacional2 = (area2 != 0) ? (populacao2 / area2) : 0;
+    float pibPerCapita2 = (populacao2 != 0) ? ((pib2 * 1000) / populacao2) : 0;
 
     // Exibição dos dados da primeira carta
-    printf("Carta 1:\n");
+    printf("***Carta 1***:\n");
     printf("Estado: %c\n", estado1);
     printf("Código: %s\n", codigo1);
     printf("Nome da Cidade: %s\n", nomeCidade1);
     printf("População: %d\n", populacao1);
     printf("Área: %.2f km²\n", area1);
-    printf("PIB: %.2f bilhões de reais\n", pib1);
+    printf("PIB: %.2f reais\n", pib1);
     printf("Número de Pontos Turísticos: %d\n", pontosTuristicos1);
+    printf("Densidade populacional: %.2f hab/km²\n", densidadePopulacional1);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita1);
 
     // Exibição dos dados da segunda carta
     printf("\nCarta 2:\n");
@@ -84,8 +95,11 @@ int main() {
     printf("Nome da Cidade: %s\n", nomeCidade2);
     printf("População: %d\n", populacao2);
     printf("Área: %.2f km²\n", area2);
-    printf("PIB: %.2f bilhões de reais\n", pib2);
+    printf("PIB: %.2f reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontosTuristicos2);
+    printf("Densidade populacional: %.2f hab/km²\n", densidadePopulacional2);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
 
     return 0;
-}
+  
+  }
